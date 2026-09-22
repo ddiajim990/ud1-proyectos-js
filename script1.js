@@ -88,7 +88,7 @@ function ejemplo7(){
 
 //ejemplo7();
 
-//Ejercicio 8: Mas bucles, solicita numero y muestra el acumulado de 10 en 10.
+//Ejemplo 8: Mas bucles, solicita numero y muestra el acumulado de 10 en 10.
 function suma_diez(num_vueltas){
     let result = 0;
 
@@ -105,7 +105,7 @@ function ejemplo8(){
 
 //ejemplo 8();
 
-//Ejercicio 9: Mas bucles, solicita numero y muestra el acumulado de 10 en 10. Da
+//Ejemplo 9: Mas bucles, solicita numero y muestra el acumulado de 10 en 10. Da
 // error si introduces un numero negativo
 function suma_diez_v2(num_vueltas){
     let result = 0;
@@ -117,7 +117,61 @@ function suma_diez_v2(num_vueltas){
             result += 10; // result = result + 10;
         }
     }
-    
+
 
     return result;
 }
+
+function ejemplo9(){
+    console.log("Ejercicio 8: " + suma_diez_v2(-7));
+}
+
+//ejemplo9();
+
+//Ejemplo 10: Calculadora. Pide dos numeros y muestra un menu para que los
+//sume, reste, multiplique o divida segun la opción marcada. Valida los datos.
+function calculadora(){
+    let num1 = parseInt(window.prompt("Introduce el primer operando: "));
+    let num2 = parseInt(window.prompt("Introduce el segundo operando: "));
+
+    let salir = false;
+    let resultado = 0;
+
+    do{
+        let opc = window.prompt("Elija una operación: \n" +
+                    "a. Suma \n" + 
+                    "b. Resta \n" + 
+                    "c. Multiplicación \n" + 
+                    "d. División \n" + 
+                    "e. Potencia \n" +
+                    "f. Salir");
+
+        switch(opc){
+            case 'a':
+                resultado = num1 + num2;
+                break;
+            case 'b':
+                resultado = num1 - num2;
+                break;
+            case 'c':
+                resultado = num1 * num2;
+                break;
+            case 'd':
+                //Validar division por cero
+                resultado = num1 / num2;
+                break;
+            case 'e':
+                resultado = potencia(num1, num2);
+                break;
+            case 'f':
+                salir = true;
+                break;
+        }
+
+        console.log(resultado);
+
+    }while(!salir);
+
+}
+
+calculadora();
