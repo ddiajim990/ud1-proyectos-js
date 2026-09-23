@@ -149,26 +149,35 @@ function calculadora(){
         switch(opc){
             case 'a':
                 resultado = num1 + num2;
+                console.log(resultado);
                 break;
             case 'b':
                 resultado = num1 - num2;
+                console.log(resultado);
                 break;
             case 'c':
                 resultado = num1 * num2;
+                console.log(resultado);
                 break;
             case 'd':
-                //Validar division por cero
-                resultado = num1 / num2;
+                if(num2 == 0){
+                    console.error("No se puede divir por cero");
+                } else {
+                    resultado = num1 / num2;
+                    console.log(resultado);
+                }
                 break;
             case 'e':
                 resultado = potencia(num1, num2);
+                console.log(resultado);
                 break;
             case 'f':
                 salir = true;
                 break;
+            default:
+                console.error("Introduzca un valor correcto");
+                break;
         }
-
-        console.log(resultado);
 
     }while(!salir);
 
